@@ -99,7 +99,6 @@ namespace Proyecto_Automatización
             // Seleccionar la opcion Excel
             driver.FindElement(By.CssSelector("label[for='tree-node-excelFile']")).Click();
             Assert.That(driver.FindElement(By.CssSelector(".text-success")).Text, Is.EqualTo("excelFile"));
-
         }
 
         [Test]
