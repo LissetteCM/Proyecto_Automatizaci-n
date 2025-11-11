@@ -42,6 +42,13 @@ namespace Proyecto_Automatización.Page
         {
             return ObtenerTexto(MsgLoginErroneo);
         }
+
+        public void login(string usuario, string pass)
+        {
+            ingresarUsuario(usuario);
+            ingresarPass(pass);
+            clickSubmit();
+        }
     }
 
 }
