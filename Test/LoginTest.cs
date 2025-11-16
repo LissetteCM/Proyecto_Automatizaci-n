@@ -15,7 +15,7 @@ namespace Proyecto_Automatización.Test
                 LoginPage pom = new LoginPage(driver);
                 pom.ingresarUsuario("student");
                 pom.ingresarPass("Password123");
-                pom.clickSubmit();  
+                pom.clickSubmit();
 
 
                 Thread.Sleep(2000);
@@ -30,26 +30,26 @@ namespace Proyecto_Automatización.Test
             }
 
         }
-        
-            [Test]
-            public void loginUsuarioErroneo()
-            {
-                try
-                {
-                    driver.Navigate().GoToUrl("https://practicetestautomation.com/practice-test-login/");
-                    LoginPage pom = new LoginPage(driver);
-                    pom.ingresarUsuario("studen");
-                    pom.ingresarPass("Password123");
-                    pom.clickSubmit();
-                    Thread.Sleep(2000);
-                    Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your username is invalid"));
-                }
-                catch (Exception ex)
-                {
-                    Assert.Fail("Error inesperado de la prueba" + ex.Message);
-                }
 
+        [Test]
+        public void loginUsuarioErroneo()
+        {
+            try
+            {
+                driver.Navigate().GoToUrl("https://practicetestautomation.com/practice-test-login/");
+                LoginPage pom = new LoginPage(driver);
+                pom.ingresarUsuario("studen");
+                pom.ingresarPass("Password123");
+                pom.clickSubmit();
+                Thread.Sleep(2000);
+                Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your username is invalid"));
             }
+            catch (Exception ex)
+            {
+                Assert.Fail("Error inesperado de la prueba" + ex.Message);
+            }
+
+        }
         [Test]
         public void loginPassErroneo()
         {
@@ -68,6 +68,8 @@ namespace Proyecto_Automatización.Test
 
         }
 
-        
+    
+
+
     }
 }
