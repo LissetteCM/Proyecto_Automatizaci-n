@@ -16,13 +16,13 @@ namespace Proyecto_Automatización.Test
             {
                 driver.Navigate().GoToUrl("https://demoqa.com/checkbox");
                 LoginPage pom = new LoginPage(driver);
-                Thread.Sleep(2000);
+              
                 pom.clickOptionOne();
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 pom.clickOptionTwo();
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 pom.clickOption();
-
+                Thread.Sleep(1000);
                 Assert.That(pom.getMsgSelec(), Does.Contain("excelFile"));
 
 
@@ -42,10 +42,10 @@ namespace Proyecto_Automatización.Test
                 driver.Navigate().GoToUrl("https://letcode.in/dropdowns");
                 LoginPage pom = new LoginPage(driver);
                 pom.fruits();
-                Thread.Sleep(2000);
+              
                 SelectElement fruit = new SelectElement(driver.FindElement(By.CssSelector("#fruits")));
                           fruit.SelectByText("Orange");
-                Thread.Sleep(2000);
+     
 
 
                 Assert.That(pom.getMsgFruit(), Is.EqualTo("You have selected Orange"));

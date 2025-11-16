@@ -42,7 +42,7 @@ namespace Proyecto_Automatización.Test
                 pom.ingresarPass("Password123");
                 pom.clickSubmit();
                 Thread.Sleep(2000);
-                Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your username is invalid"));
+                Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your username is invalid!"));
             }
             catch (Exception ex)
             {
@@ -58,7 +58,8 @@ namespace Proyecto_Automatización.Test
                 driver.Navigate().GoToUrl("https://practicetestautomation.com/practice-test-login/");
                 LoginPage pom = new LoginPage(driver);
                 pom.login("student", "Passwrd123");
-                Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your password is invalid"));
+                Thread.Sleep(2000);
+                Assert.That(pom.getMsgLoginErroneo(), Is.EqualTo("Your password is invalid!"));
 
             }
             catch (Exception ex)
